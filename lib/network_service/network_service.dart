@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:interinship_task/log_service/log_service.dart';
+import 'package:interinship_task/services/log_service.dart';
 
 class NetworkService {
 
@@ -28,7 +28,7 @@ class NetworkService {
           baseUrl: getServer(),
           validateStatus: (status) => status! < 203,
           headers: getHeaders()))
-          .get(SERVER_DEVELOPMENT, )
+          .get(SERVER_DEVELOPMENT,queryParameters: {} )
           .timeout(const Duration(seconds: 20), onTimeout: () {
         throw TimeoutException(
             'The connection has timed out, Please try again!');
@@ -36,7 +36,6 @@ class NetworkService {
       LogService.d(response.data.toString());
       return jsonEncode(response.data);
     } on DioError catch (e) {
-      // callLoginPage(e.response);
       if (e.response?.statusCode == 409) {
 
       }

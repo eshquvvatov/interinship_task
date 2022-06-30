@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:interinship_task/pages/home_page.dart';
+import 'package:interinship_task/pages/intro_page.dart';
+import 'package:interinship_task/pages/main_page/provider.dart';
 import 'package:provider/provider.dart';
 
-import 'controller/home_controller.dart';
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => HomeController()),
+        ChangeNotifierProvider(create: (_) => Main_pageProvider()),
       ],
       child: const MyApp(),
     ),
@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
+    return const MaterialApp(
+      home: IntroPage(),
     );
   }
 }

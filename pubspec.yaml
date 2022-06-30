@@ -23,6 +23,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   logger: ^1.1.0
   dio: ^4.0.6
+  simple_animations: ^4.2.0
 
 flutter:
 

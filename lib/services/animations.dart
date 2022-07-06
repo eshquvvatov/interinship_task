@@ -8,8 +8,9 @@ enum AnimationType { opacity, translateY }
 class FadeAnimation extends StatelessWidget {
   final double delay;
   final Widget child;
+  final Key? keyText;
 
-  FadeAnimation({required this.delay,required this.child});
+  FadeAnimation({required this.delay,required this.child,this.keyText});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class FadeAnimation extends StatelessWidget {
         Duration(milliseconds: 500),
       );
 
-    return PlayAnimation<MultiTweenValues<AnimationType>>(
+    return PlayAnimation<MultiTweenValues<AnimationType>>( key:keyText ,
       delay: Duration(milliseconds: (500 * delay).round()),
       duration: tween.duration,
       tween: tween,

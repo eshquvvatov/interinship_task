@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:interinship_task/pages/intro_page.dart';
 import 'package:interinship_task/pages/main_page/provider.dart';
+import 'package:interinship_task/pages/my_provider_state_manegement/get_api_page.dart';
+import 'package:interinship_task/pages/my_provider_state_manegement/my_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -19,8 +21,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: IntroPage(),
+    return MaterialApp(
+      home: MyStateManagementProvider(
+        model: MyProvider(),
+      child: const MyStateManagement(),),
     );
   }
 }

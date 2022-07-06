@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:interinship_task/services/animations.dart';
 
+import 'home_task_key/view.dart';
 import 'main_page/view.dart';
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -31,6 +32,15 @@ class _IntroPageState extends State<IntroPage> {
                   onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(builder:
                         (context)=> Main_pagePage()));
+                  }, child: Text("Go contact"))),
+            FadeAnimation(delay: 4,
+              child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    alignment: Alignment.center,
+                  ),
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder:
+                        (context)=> Home_task_keyPage()));
                   }, child: Text("Go contact"))),
 
 
